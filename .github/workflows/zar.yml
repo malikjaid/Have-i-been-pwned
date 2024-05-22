@@ -3,7 +3,7 @@ name: Create Pull Request
 on:
   push:
     branches:
-      - junaid
+      - fixes_general_1
 
 jobs:
   create_pull_request:
@@ -12,12 +12,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+         
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          title: 'Merge junaid into main'
-          body: 'This pull request was automatically created.'
+      - name: create pull request
+        run: gh pr create -B main -H junaid --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  
 
