@@ -4,7 +4,7 @@ name: Create Pull Request
 on:
   push:
     branches:
-      - junaid
+      - junaidm
 
 jobs:
   create_pull_request:
@@ -24,7 +24,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: junaid
+          branch: junaidm
           base: main
           title: 'Automatic Pull Request from junaid to main'
           body: |
