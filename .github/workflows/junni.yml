@@ -3,7 +3,7 @@ name: Create Pull Request
 on:
   push:
     branches:
-      - malik
+      - malikt
 
 jobs:
   create_pull_request:
@@ -23,7 +23,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: malik
+          branch: malikt
           base: main
           title: 'Automatic Pull Request from junaid to main'
           body: |
